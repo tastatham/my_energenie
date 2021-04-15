@@ -45,7 +45,7 @@ def check_connection():
         # Check again after 1 minute 
         time.sleep(30)
 
-    if site1_response == 0 and site2_response == 0 and site3_response == 0:
+        if site1_response == 0 and site2_response == 0 and site3_response == 0:
             print('All sites are reachable, there is no need to reset the router')
             pass
         # If there is still no connection, reset router
