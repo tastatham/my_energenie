@@ -1,0 +1,8 @@
+recursive-include energenie *.py
+recursive-include energenie *.yaml
+
+include setup.py
+include *.yml
+include README.rst
+include LICENSE
+exclude *.ipynb
