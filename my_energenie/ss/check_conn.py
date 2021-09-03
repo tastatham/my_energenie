@@ -8,8 +8,8 @@ def reset_router():
     Reset home router using energenie sockets and raspberry pi
     """
 
-    # Define router as socket 2 - I have 2 sockets installed
-    router = Energenie(2)
+    # Define router as socket 1 - set using pair_socket.py
+    router = Energenie(1)
     
     # Turn off router
     router.off()

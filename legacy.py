@@ -1,7 +1,14 @@
 # legacy.py  17/03/2016  D.J.Whale
+#
+# Note: This is a test harness only, to prove that the underlying OOK
+# radio support for legacy plugs is working.
+# Please don't use this as a basis for building your applications from.
+# Another higher level device API will be designed once this has been
+# completely verified.
 
 import time
-import encoder, radio
+
+from my_energenie.src import encoder, radio
 
 # How many times to send messages in the driver fast loop
 # Present version of driver limits to 15
@@ -142,3 +149,4 @@ if __name__ == "__main__":
         radio.finished()
 
 # END
+

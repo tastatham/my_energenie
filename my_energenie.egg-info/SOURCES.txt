@@ -1,0 +1,7 @@
+MANIFEST.in
+README.rst
+setup.py
+my_energenie.egg-info/PKG-INFO
+my_energenie.egg-info/SOURCES.txt
+my_energenie.egg-info/dependency_links.txt
+my_energenie.egg-info/top_level.txt
