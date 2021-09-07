@@ -10,7 +10,7 @@ def reset_router():
 
     # Define router as socket 1 - set using pair_socket.py
     router = Energenie(1)
-    
+
     # Turn off router
     router.off()
     print('Reset router, now wait 30 seconds before turning back on')
@@ -20,32 +20,30 @@ def reset_router():
     router.on()
 
 def check_connection():
-    
+
     """
     An home automation script to reset router if there is no internet connection using raspberry pi and Energenie sockets
     """
-    
+
     # Chose two sites to ping
     site1 = 'google.com'
     site2 = 'twitter.com'
-    site3 = 'https://en.wikipedia.org/wiki/Main_Page'
+
 
     # Define first response - ping google
     site1_response = os.system('ping -c 1 ' + site1)
     # Define second response - ping twitter
     site2_response = os.system('ping -c 1 ' + site2)
-    
-    site3_response = os.system('ping -c 1 ' + site3)
 
     # Check if both sites are reachable
-    if site1_response == 0 and site2_response == 0 and site3_response == 0:
+    if site1_response == 0 and site2_response == 0:
         print('All sites are reachable, there is no need to reset the router')
         pass
     else:
-        # Check again after 1 minute 
+        # Check again after 1 minute
         time.sleep(30)
 
-        if site1_response == 0 and site2_response == 0 and site3_response == 0:
+        if site1_response == 0 and site2_response == 0:
             print('All sites are reachable, there is no need to reset the router')
             pass
         # If there is still no connection, reset router
@@ -60,7 +58,7 @@ def check_connection():
 if __name__ == '__main__':
 
     # Define how often the function is run
-    schedule.every(1).seconds.do(check_connection)
+    schedule.every(15).seconds.do(check_connection)
 
     while True:
         # Run pending scheduled function
